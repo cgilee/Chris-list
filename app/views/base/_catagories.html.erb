@@ -1,0 +1,32 @@
+<div class="container py-2">
+  <div class="row">
+    <div class="col-sm">
+			<ul class="list-group list-group-flush">
+        <% 3.times do  %>
+				<li class="list-group-item bg-light"><%= Faker::Commerce.department %></li>
+          <% 5.times do %>
+        <button type="button" class="list-group-item list-group-item-action"><%= Faker::Commerce.product_name %></button>
+          <% end %>
+        <% end %>
+			</ul>
+    </div>
+    <div class="col-sm">
+			<ul class="list-group list-group-flush">
+        <% 2.times do  %>
+		  		<li class="list-group-item bg-light"><%= Faker::Commerce.department %></li>
+            <% 8.times do %> 
+              <button type="button" class="list-group-item list-group-item-action"><%= Faker::Commerce.product_name %></button>
+            <% end %>
+        <% end %>
+			</ul>
+    </div>
+    <div class="col-sm">
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item bg-light"><%= Faker::Commerce.department %></li>
+          <% 16.times do %>
+            <button type="button" class="list-group-item list-group-item-action"><%= Faker::Commerce.product_name %></button>
+          <% end %>
+			</ul>
+    </div>
+  </div>
+</div>

@@ -1,21 +1,41 @@
-    <div class="container">
-      <div class="row">
-        
-       <div class="col-4">
-		     <h1>Chris'list</h1>
-			   <button type="button" class="btn btn-info btn-block">Create a Post</button>        
-			   <button type="button" class="btn btn-light btn-block">My Account</button>
-		 	   <button type="button" class="btn btn-outline-secondary btn-block">Search Chris'list</button>
-       </div>
-        
-       <div class="col-7">
-         navbar catagories subcatagories
-       </div>
-        
-       <div class="col-1">
-         Locations
-       </div>
-
-      </div>
+<div class="container">
+  <div class="row justify-content-center pt-5">
+    <div class="col-8 bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">SF Bay Area</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Faker place</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Faker place</a>
+      </li>
+    </ul>
+  </div>
+</nav>
     </div>
+
+<div class="container">    
+  <div class="row">
+    <div class="col-2">
+      <h1>Chris'list</h1>
+  	    <p><button type="button" class="btn btn-primary btn-block">Create a Post</button></p>
+			  <p><button type="button" class="btn btn-light btn-block">My Account</button></p>
+        <p><input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></p>
+    </div>
+        
+    <div class="col-8">
+      <%= render "catagories" %>
+    </div>
+        
+    <div class="col-2">
+      <%= render "locations" %>
+    </div>
+
+  </div>
+</div>
 
