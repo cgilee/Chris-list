@@ -1,33 +1,36 @@
 <div class="row py-2">
-  <div class="col-sm">
+  <div class="col-xs-10 col-sm-6 col-md-4 col-lg-4 text-truncate">
     <ul class="list-group list-group-flush">
       <% 3.times do  %>
-        <li class="list-group-item bg-light"><%= Faker::Commerce.department %></li>
+         <a href="/catagory/antiques" class="list-group-item list-group-item-action bg-light font-weight-bold text-truncate"><%= Faker::Commerce.department %></a>
           <% 5.times do %>
-            <button type="button" class="list-group-item list-group-item-action"><%= Faker::Commerce.product_name %></button>
+            <button type="button" class="list-group-item list-group-item-action text-truncate"><%= Faker::Commerce.product_name %></button>
           <% end %>
         </li>
       <% end %>
     </ul>
   </div>
-  <div class="col-sm">
+
+  <div class="col-xs-10 col-sm-6 col-md-4 col-lg-4 text-truncate">
     <ul class="list-group list-group-flush">
       <% 2.times do  %>
-        <li class="list-group-item bg-light"><%= Faker::Commerce.department %></li>
+        <a href="/catagory/antiques" class="list-group-item list-group-item-action bg-light font-weight-bold text-truncate"><%= Faker::Commerce.department %></a>
           <% 8.times do %> 
-            <button type="button" class="list-group-item list-group-item-action"><%= Faker::Commerce.product_name %></button>
+            <button type="button" class="list-group-item list-group-item-action text-truncate"><%= Faker::Commerce.product_name %></button>
           <% end %>
         </li>
       <% end %>
     </ul>
   </div>
-  <div class="col-sm">
+
+  <div class="col-xs-10 col-sm-6 col-md-4 col-lg-4 text-truncate">
     <ul class="list-group list-group-flush">
-      <li class="list-group-item bg-light"><%= Faker::Commerce.department %></li>
+      <a href="/catagory/antiques" class="list-group-item list-group-item-action bg-light font-weight-bold text-truncate"><%= Faker::Commerce.department %></a>
         <% 16.times do %>
-          <button type="button" class="list-group-item list-group-item-action"><%= Faker::Commerce.product_name %></button>
+          <button type="button" class="list-group-item list-group-item-action text-truncate"><%= Faker::Commerce.product_name %></button>
         <% end %>
       </li>
     </ul>
   </div>
+
 </div>

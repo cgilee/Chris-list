@@ -1,26 +1,30 @@
-<div class="container">
-  <div class="row pt-5">
-    <div class="col-8 offset-2">
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-12">
+      <div class="pt-3"></div>
       <%= render "navbar" %>
     </div>
+
   </div>
 </div>
 
-<div class="container">    
+
+<div class="container-fluid">
   <div class="row">
 
-    <div class="col-2">
-      <h1>Chris'list</h1>
-      <p><button type="button" class="btn btn-primary btn-block">Create a Post</button></p>
+    <div class="col-xs-10 col-sm-8 col-md-6 col-lg-2 mx-auto">
+      <%= render "brand" %>
+      <p><button type="button" class="btn btn-primary btn-block shadow">Create a Post</button></p>
       <p><button type="button" class="btn btn-light btn-block">My Account</button></p>
       <p><input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></p>
     </div>
         
-    <div class="col-8">
+    <div class="col-md-12 col-lg-8">
       <%= render "catagories" %>
     </div>
         
-    <div class="col-2">
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-2">
       <%= render "locations" %>
     </div>
 
