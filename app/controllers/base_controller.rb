@@ -1,6 +1,10 @@
 class BaseController < ApplicationController
   def index
   end
-  def antiques
+
+  def categories
+  end
+
+  def item
   end
 end
