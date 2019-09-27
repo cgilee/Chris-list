@@ -29,4 +29,7 @@ class PostController < ApplicationController
 
   def map
   end
+
+  def preview
+  end
 end

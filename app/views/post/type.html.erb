@@ -7,11 +7,11 @@
 
       <%= render "button_list" %>
   </div>
+
+  <h1 class="display-5 pb-2 text-center">Choose the type of your item:</h1>
  
   <div class="row mx-auto">
-    <div class="col-5 mx-auto pb-3">
-
-      <h1 class="display-5 pb-2">Choose the type of your item:</h1>
+    <div class="col-6 mx-auto pb-3">
 
         <div class="form-check">
           <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
@@ -90,20 +90,26 @@
           </label>
         </div>
 
-      <div class="form-check pb-4">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios6" value="option6">
-        <label class="form-check-label" for="exampleRadios6">
-          <%= @local[11] %>
-        </label>
-     </div>
-
-     <p>
-       <a class="btn btn-light" href="/post/new/category" role="button">Next</a>
-     </p>
-
+       <div class="form-check pb-4">
+         <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios6" value="option6">
+         <label class="form-check-label" for="exampleRadios6">
+           <%= @local[11] %>
+         </label>
+      </div>
 
     </div>
   </div>
 
+  <div class="row">
+    <div class="col-6 mx-auto pb-3">
+      <p>
+        <a class="btn btn-light float-right" href="/post/new/category" role="button">Next &rtrif;</a>
+      </p>
+    </div>
   </div>
+<!-- row- -->
+
+      <p>
+      </p>
+
 </div>

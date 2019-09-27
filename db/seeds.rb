@@ -5,3 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+#
+
+raw = IO.read('db/data.json')
+json = JSON.parse(raw)
+
+json["counties"].each_pair do |county_name, city|
+  county = County.create(name:county_name)
+  cities.each do |city|
+    City.create(name:city_name, county_id:county.id)
+  end
+end
+
+json["categories"].each_pair do |category_name, subcategory|
+  category = Category.create(name:category_name)
+  subcategories.each do |subcategory|
+    Subcategory.create(name:subcategory_name, category_id:category.id)
+  end
+end

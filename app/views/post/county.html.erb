@@ -8,17 +8,17 @@
       <%= render "button_list" %>
   </div>
 
+  <h1 class="display-5 text-center pb-2">Choose Your County:</h1>
+
   <div class="row mx-auto">
-    <div class="col-5  mx-auto pb-3">
+    <div class="col-6 mx-auto pb-3">
 
-      <h1 class="display-5 text-center pb-2">Choose Your County:</h1>
-
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-          <label class="form-check-label" for="exampleRadios1">
-            <%= @local[0] %>
-          </label>
-        </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+        <label class="form-check-label" for="exampleRadios1">
+          <%= @local[0] %>
+        </label>
+      </div>
 
       <div class="form-check">
         <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
@@ -32,35 +32,38 @@
         <label class="form-check-label" for="exampleRadios3">
           <%= @local[2] %>
         </label>
-     </div>
+      </div>
 
       <div class="form-check">
         <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="option4">
         <label class="form-check-label" for="exampleRadios4">
           <%= @local[3] %>
         </label>
-     </div>
+      </div>
 
       <div class="form-check">
         <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios5" value="option5">
         <label class="form-check-label" for="exampleRadios5">
           <%= @local[4] %>
         </label>
-     </div>
+      </div>
 
-      <div class="form-check pb-4">
+      <div class="form-check pb-2">
         <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios6" value="option6">
         <label class="form-check-label" for="exampleRadios6">
           <%= @local[5] %>
         </label>
-     </div>
-
-     <p>
-       <a class="btn btn-light" href="/post/new/city" role="button">Next</a>
-     </p>
+      </div>
 
     </div>
   </div>
 
-</div>
+  <div class="row">
+    <div class="col-6 mx-auto pb-3">
+      <p>
+        <a class="btn btn-light float-right" href="/post/new/city" role="button">Next &rtrif;</a>
+      </p>
+    </div>
+  </div>
+
 </div>
