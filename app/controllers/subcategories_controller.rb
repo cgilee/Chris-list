@@ -1,4 +1,7 @@
 class SubcategoriesController < ApplicationController
-  validates_uniqueness_of :name
-  belongs_to :category
+  def show
+    @category = Category.find_by(id: params[:id])
+    @subcategory = Subcategory.find_by(category_id: params[:id])
+  end
+
 end

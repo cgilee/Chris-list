@@ -1,10 +1,20 @@
 Rails.application.routes.draw do
-  resources :subcategories
-  resources :categories
-  resources :cities
-  resources :counties
+
+  resources :counties do
+    resources :subcategories
+    resources :categories
+    resources :cities
+  end
+
+  resources :cities do
+    resources :subcategories
+    resources :categories
+  end
 
   root to: "base#index"
+
+  get "/counties/:county" => "counties#show"
+  get "/cities/:city_id" => "counties#show"
 
   get "/category/:antiques" => "base#antiques"
   get "/category/antiques/show" => "base#show"

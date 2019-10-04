@@ -1,4 +1,6 @@
 class CitiesController < ApplicationController
-  validates_uniqueness_of :name
-  belongs_to :county
+  def show
+    @city = City.find_by(id: params[:id])
+    @county = @city.county
+  end
 end
