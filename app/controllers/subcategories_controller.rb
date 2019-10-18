@@ -1,7 +1,10 @@
 class SubcategoriesController < ApplicationController
+  before_action :set_location
+  include Locationize
+
   def show
-    @category = Category.find_by(id: params[:id])
-    @subcategory = Subcategory.find_by(category_id: params[:id])
+    @subcategory = Subcategory.find_by(slug: params[:slug])
+    @category = @subcategory.category 
   end
 
 end

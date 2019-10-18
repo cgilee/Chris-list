@@ -1,0 +1,43 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-12 pb-2">
+      <%= render "navbar" %>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-xs-8 col-sm-8 col-md-6 col-lg-2 mx-auto">
+      <%= render "brand" %>
+
+      <div class="pb-3 h5">
+        <span><%= @category.name %>, </span><span class="font-weight-bolder"><%= @subcategory.name %></span>
+      </div>
+
+      <p>
+				<a class="btn btn-primary btn-block shadow" href="/post/new/county" role="button">
+					Create a Post
+				</a>
+      </p>
+
+      <%= render "form" %>
+    </div>
+
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-10">
+			<%= render "pagination" %>
+
+			<div class="row pb-4">
+				<%= render "card_list" %>
+				<%= render "card_list" %>
+				<%= render "card_list" %>
+				<%= render "card_list" %>
+			</div>
+    </div>
+
+  </div>
+</div>

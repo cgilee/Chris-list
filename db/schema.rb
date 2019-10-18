@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_20_234514) do
+ActiveRecord::Schema.define(version: 2019_10_18_230156) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2019_09_20_234514) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_categories_on_slug"
   end
 
   create_table "cities", force: :cascade do |t|
@@ -26,13 +28,42 @@ ActiveRecord::Schema.define(version: 2019_09_20_234514) do
     t.integer "county_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
     t.index ["county_id"], name: "index_cities_on_county_id"
+    t.index ["slug"], name: "index_cities_on_slug"
   end
 
   create_table "counties", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_counties_on_slug"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.integer "county_id"
+    t.integer "city_id"
+    t.integer "category_id"
+    t.integer "subcategory_id"
+    t.string "title"
+    t.string "slug"
+    t.integer "price_cents"
+    t.string "street_address"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
+    t.string "description"
+    t.string "phone"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_posts_on_category_id"
+    t.index ["city_id"], name: "index_posts_on_city_id"
+    t.index ["county_id"], name: "index_posts_on_county_id"
+    t.index ["price_cents"], name: "index_posts_on_price_cents"
+    t.index ["slug"], name: "index_posts_on_slug"
+    t.index ["subcategory_id"], name: "index_posts_on_subcategory_id"
   end
 
   create_table "subcategories", force: :cascade do |t|
@@ -40,7 +71,9 @@ ActiveRecord::Schema.define(version: 2019_09_20_234514) do
     t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
     t.index ["category_id"], name: "index_subcategories_on_category_id"
+    t.index ["slug"], name: "index_subcategories_on_slug"
   end
 
 end

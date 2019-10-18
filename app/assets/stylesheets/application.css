@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+  z-index:2;
+  color:#ffffff;
+  background-color:#e9ecef;
+  border-color:#dee2e6;
+}
