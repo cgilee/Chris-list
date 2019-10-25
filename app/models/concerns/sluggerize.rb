@@ -7,7 +7,7 @@ module Sluggerize
     before_save :set_slug
 
     def set_slug
-      self.slug = slug_field.parameterize
+      self.slug = Slug.new(self).generate
     end
 
     def to_param

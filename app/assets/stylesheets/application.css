@@ -20,3 +20,16 @@
   background-color:#e9ecef;
   border-color:#dee2e6;
 }
+
+
+.btn-aqua, .btn-aqua:hover, .btn-aqua:active, .btn-aqua:focus {
+  color:#ffffff;
+  background-color: #007be0;
+  border-color:#007be0;
+    }
+
+.btn-aqua.active, .btn-aqua:hover, .btn-aqua:active, .btn-aqua:focus {
+  color:#ffffff;
+  background-color: #0477d6;
+  border-color:#0477d6;
+    }

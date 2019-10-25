@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-12 mx-auto">
+      <%= render "breadcrumb" %>
+    </div>
+
+    <div class="col">
+      <ul class="nav nav-pills justify-content-center mb-3" id="pills-tab" role="tablist">
+        <% @tabs.each.with_index do |tab, index| %>
+          <li class="nav-item">
+            <a class="nav-link <%= :active if index==0 %>" id="<%= tab %>-tab" data-toggle="pill" href="#pills-<%= tab %>" role="tab" aria-controls="<%= tab %>-profile" aria-selected="true">
+              <%= tab.capitalize %>
+            </a>
+          </li>
+        <% end %>
+      </ul>
+
+      <%= form_for @post do |f|%>
+      
+      <div class="tab-content" id="pills-tabContent">
+        <% @tabs.each.with_index do |tab, index| %>
+          <div class="tab-pane fade show <%= :active if index==0 %>" id="pills-<%= tab %>" role="tabpanel" aria-labelledby="<%= tab %>-tab">
+            <%= render tab, form: f %>
+          </div>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+

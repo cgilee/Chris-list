@@ -2,18 +2,42 @@
   <div class="row">
 
     <div class="col-12 mx-auto">
-      <%= render "breadcrumb" %>
+      <%= render "navbar" %>
+    </div>
+
+    <div class="col-9 mx-auto justify-content-center">
+
+			<nav aria-label="Page navigation example">
+				<ul class="pagination pagination-sm justify-content-center">
+					<li class="page-item">
+						<a class="page-link" href="#" aria-label="Previous">
+							<span aria-hidden="true">&ltrif; prev</span>
+						</a>
+					</li>
+					<li class="page-item"><a class="page-link" href="#">&utrif;</a></li>
+					<li class="page-item">
+						<a class="page-link" href="#" aria-label="Next">
+							<span aria-hidden="true">next &rtrif;</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+
+      <div class="pb-3">
+        <%= render "subnavbar" %>
+      </div>
+
     </div>
 
   </div>
 </div>
 
 
-<div class="container shadow-sm mb-3 border border-7">
+<div class="container">
   <div class="row mx-auto">
 
     <div class="col-8">
-      <h1 class="display-5 text-center py-2">
+      <h1 class="display-5 text-center pb-2">
         <%= Faker::Commerce.product_name %> - $<%= Faker::Number.number(digits = 3) %>
       </h1>
     </div>
@@ -50,15 +74,4 @@
     </div>
   </div>
 
-</div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-xl-12 col-lg-12 col-md-7 col-sm-9 col-xs-10 mx-auto pb-3">
-      <p>
-        <a class="btn btn-light float-left" href="/post/new/photos" role="button">&ltrif; Prev</a>
-        <a class="btn btn-primary float-right" href="#" role="button">Submit form &rtrif;&rtrif;</a>
-      </p>
-    </div>
-  </div>
 </div>

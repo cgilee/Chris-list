@@ -1,23 +1,22 @@
 class PostsController < ApplicationController
+  include Locationize
 
-  def county
+  def new
+    @tabs = %w{county city category subcategory content map photos preview} 
+    @post = Post.new
   end
 
-  def city
+  def create
+    @post = Post.new(post_params)
+    if @post.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
-  def type
+  def post_params
+    params.require(:post).permit(:title, :county_id, :city_id, :category_id, :subcategory_id, :slug, :price_cents, :street_address, :city, :state, :zip, :description, :phone, :email)
   end
 
-  def category
-  end
-
-  def content
-  end
-
-  def map
-  end
-
-  def preview
-  end
 end

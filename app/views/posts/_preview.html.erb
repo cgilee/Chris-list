@@ -1,0 +1,54 @@
+
+<div class="container shadow-sm mb-3 border border-7">
+  <div class="row mx-auto">
+
+    <div class="col-8">
+      <h1 class="display-5 text-center py-2">
+        <%= Faker::Commerce.product_name %> - $<%= Faker::Number.number(digits = 3) %>
+      </h1>
+    </div>
+
+		<div class="col-8">
+			<div class="pb-4 mx-auto">
+				<img src="/silas_issac.jpg" class="card-img-top rounded" alt="...">
+			</div>
+		</div>
+
+    <div class="col-4">
+      <div class="py-4 mx-auto">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3166.6183823575643!2d-121.91743366635173!3d37.469731291055446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fc61c89f7dbf5%3A0xadd4d6fec767fe17!2s48482%20Arkansas%20Pl%2C%20Fremont%2C%20CA%2094539!5e0!3m2!1sen!2sus!4v1568853360922!5m2!1sen!2sus" width="350" height="350" frameborder="0" class="rounded border" style="border:0;" allowfullscreen=""></iframe>
+      </div>
+
+      <div class="pb-2">
+        <span class="badge badge-light p-3"><p class="h6 my-auto font-weight-light">
+          condition: <strong>New</strong></p>
+        </span>
+      </div>
+
+      <span class="badge badge-light p-3"><p class="h6 my-auto font-weight-light">
+        manufacturer: <strong><%= Faker::App.name %></strong></p>
+      </span>
+    </div>
+
+  </div>
+
+  <div class="row mx-auto">
+    <div class="col-11 mx-auto">
+      <p class="lead text-justify"><%= Faker::Lorem.paragraph(20) %></p>
+
+    <%= render "metalinks" %>
+    </div>
+  </div>
+
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-7 col-sm-9 col-xs-10 mx-auto pb-3">
+      <p>
+        <a class="btn btn-light float-left" href="/post/new/photos" role="button">&ltrif; Prev</a>
+        <%= form.submit "Submit form >>", class:"btn btn-primary float-right" %>
+      </p>
+    </div>
+  </div>
+</div>

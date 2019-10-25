@@ -1,0 +1,63 @@
+" ============================================================================
+" Netrw Directory Listing                                        (netrw v153)
+"   /Users/student/rails/mylist
+"   Sorted by size
+"   Quick Help: <F1>:help  (targets)  mt:target Tb:use bookmark  Th:use history
+" ==============================================================================
+../
+mylist/
+| .git/
+| app/
+| | assets/
+| | channels/
+| | controllers/
+| | helpers/
+| | jobs/
+| | mailers/
+| | models/
+| | views/
+| | | .DS_Store
+| | | layouts/
+| | | post/
+| | | base/
+| | | counties/
+| | | cities/
+| | | categories/
+| | | subcategories/
+| | | application/
+| | | posts/
+| | .DS_Store
+| bin/
+| config/
+| db/
+| lib/
+| log/
+| public/
+| storage/
+| test/
+| tmp/
+| vendor/
+| .ruby-version
+| package.json
+| config.ru
+| _radio.html.erb
+| Rakefile
+| README.md
+| .gitignore
+| Gemfile
+| Gemfile.lock
+| .DS_Store
+| .Gemfile.swp
+| .NetrwTreeListing 225.swp
+| .NetrwTreeListing 226.swp
+| .NetrwTreeListing 227.swp
+| .NetrwTreeListing 228.swp
+| .NetrwTreeListing 229.swp
+| .NetrwTreeListing 230.swp
+| .NetrwTreeListing 231.swp
+| .NetrwTreeListing 232.swp
+| .NetrwTreeListing 233.swp
+| .NetrwTreeListing 234.swp
+| .NetrwTreeListing 235.swp
+| .NetrwTreeListing 236.swp
+| silas_and_isaac.png

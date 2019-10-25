@@ -7,4 +7,9 @@ class SubcategoriesController < ApplicationController
     @category = @subcategory.category 
   end
 
+  def listing
+    @subcategory = Subcategory.find_by(slug: params[:slug])
+    @category = @subcategory.category 
+  end
+
 end

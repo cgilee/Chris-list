@@ -1,0 +1,3 @@
+<% subcategories.each do |subcategory| %>
+  <%= link_to subcategory.name, city_subcategory_path(@city, subcategory), class:"list-group-item list-group-item-action text-truncate" %>
+<% end %>

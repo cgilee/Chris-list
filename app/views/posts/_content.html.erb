@@ -1,12 +1,4 @@
 <div class="container-fluid">
-  <div class="row">
-    
-    <div class="col-12 mx-auto">
-      <%= render "breadcrumb" %>
-    </div>
-  
-      <%= render "button_list" %>
-  </div>
 
   <h1 class="display-5 text-center pb-2">Write Your Posting Content:</h1>
 
@@ -17,8 +9,8 @@
 
         <div class="col-7">
 					<div class="form-group">
-						<label for="exampleInput1">Posting Title:</label>
-						<input type="posting title" class="form-control" id="exampleInput1">
+						<label for="Title-Input">Posting Title:</label>
+            <%= form.text_field :title, class:"form-control" %>
 	 				</div>
  				</div>
 
@@ -28,43 +20,53 @@
 						<div class="input-group-prepend">
 							<span class="input-group-text">$</span>
 						</div>
-						<input type="text" class="form-control" placeholder="amount" aria-label="Amount">
+            <%= form.text_field :price_cents, class:"form-control" %>
 					</div>
 				</div>
 
 				<div class="col-12">
 					<div class="form-group">
 						<label for="exampleFormControlTextarea1">Description:</label>
-						<textarea class="form-control" id="exampleFormControlTextarea1" rows="7"></textarea>
+            <%= form.text_area :description, class:"form-control", rows:"7" %>
 		    	</div>
 	  		</div>
 
 				<div class="col-6">
-					<label for="price">Condition:</label>
+					<label for="State-Select">State:</label>
 					<div class="form group pb-3">
 						<select class="custom-select">
-							<option value="1">New</option>
-							<option value="2">Like new</option>
-							<option value="3">Used</option>
-							<option value="4">Bad</option>
+              <option value="1">Alabama</option>
+							<option value="2">Alaska</option>
+							<option value="3">Arizona</option>
+							<option value="4">Arkansas</option>
+							<option value="5">California</option>
+							<option value="6">Colorado</option>
+							<option value="7">Connecticut</option>
 						</select>
 					</div>
 				</div>
 
 				<div class="col-6">
 					<div class="form-group">
-						<label for="exampleInput2">Make/Manufacturer:</label>
-						<input type="manufacturer" class="form-control" id="exampleInput2">
+						<label for="Address-Input">Street Address:</label>
+            <%= form.text_field :street_address, class:"form-control" %>
 					</div>
 				</div>
 
-        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 pb-2">
+				<div class="col-6">
+					<div class="form-group">
+						<label for="Zipcode-Input">Zip:</label>
+            <%= form.text_field :zip, class:"form-control" %>
+					</div>
+				</div>
+        
+        <div class="col-xl-6">
  			 	  <div class="form-group">
-			 		  <label for="exampleInputEmail1">Email address</label>
-			    	<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <label for="Email-Input">Email:</label>
+            <%= form.text_field :email, class:"form-control" %>
 			    </div>
         </div>
-        
+
       </div>
     </div>
   </div>
