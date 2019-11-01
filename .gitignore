@@ -30,3 +30,6 @@
 /*.swp
 /*/*.swp
 /*/*/*.swp
+
+# Ignreo pictures
+/db/photos/*

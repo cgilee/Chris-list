@@ -14,21 +14,8 @@ Rails.application.routes.draw do
 
   root to: (redirect "/counties/san-francisco-bay-area")
 
-  #new_post
   get "/posts/new" => "posts#new"
-
-  #category_listing
-  get "counties/:county_id/categories/:category_slug/listing" => "categories#listing"
-  get "cities/:city_slug/categories/:category_slug/listing" => "categories#listing"
-
-  #subcategory_listing
-  get "counties/:county_id/subcategories/:subcategory_slug/listing" => "subcategories#listing"
-  get "city/:city_slug/subcategories/:subcategory_slug/listing" => "subcategories#listing"
-
-  get "/post/new/category" => "posts#category"
-  get "/post/new/content" => "posts#content"
-  get "/post/new/map" => "posts#map"
-  get "/post/new/photos" => "posts#photos"
-  get "/post/new/preview" => "posts#preview"
+  get "/:county/:county_slug/posts/all" => "posts#show"
+  get "/:city/:city_slug/posts/all" => "posts#show"
 
 end

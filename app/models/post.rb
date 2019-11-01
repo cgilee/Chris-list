@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-
+  has_many_attached :photos
 
   belongs_to :county, optional: :true
   belongs_to :city, optional: :true

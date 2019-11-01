@@ -1,0 +1,30 @@
+<% Post.all.each do |post| if post.subcategory == @subcategory || post.category == @category %>
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+    <div class="card-deck pb-4">
+      <div class="card shadow">
+
+        <%= link_to "", "#", class:"stretched-link" %>
+
+        <%= image_tag post.photos.first, class:"card-img-top img-thumbnail" if post.photos.attached? %>
+       
+        <div class="card-body">
+          <h5 class="card-title text-truncate"><%= post.title %></h5>
+          <p class="card-text font-weight-lighter text-truncate"><%= post.description %></p>
+        </div>
+
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">$<%= post.price_cents %></li>
+        </ul>
+
+        <div class="card-footer">
+          <%= post.city_or_province %>, 
+          <%= post.category.name %>, 
+          <%= post.subcategory.name %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+<% end %>
+<% end %>
+

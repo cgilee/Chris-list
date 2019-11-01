@@ -24,5 +24,6 @@ class CreatePosts < ActiveRecord::Migration[5.2]
     add_index :posts, :subcategory_id
     add_index :posts, :slug
     add_index :posts, :price_cents
+    add_index :posts, :photos
   end
 end

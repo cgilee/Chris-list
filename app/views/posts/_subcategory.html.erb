@@ -7,7 +7,7 @@
 
       <% Subcategory.all.each do |ratio| %>
         <div class="form-check">
-          <%= radio_button :post, :subcategory_id, ratio.id, class: "form-check-input" %>
+          <%= radio_button :post, :subcategory_id, ratio.id, class: "form-check-input" , :required => true%>
           <label class="form-check-label" for="exampleRadios1">
             <%= ratio.name %>
           </label>

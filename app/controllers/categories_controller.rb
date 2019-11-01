@@ -5,10 +5,8 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find_by(slug: params[:slug])
     @subcategory = Subcategory.find_by(slug: params[:slug])
+    #@posts = location.posts.per_category(@category)
+    #@pagy, @posts = pagy(@posts, items: 12)
   end
 
-  def listing
-    @category = Category.find_by(slug: params[:slug])
-    @subcategory = Subcategory.find_by(slug: params[:slug])
-  end
 end
