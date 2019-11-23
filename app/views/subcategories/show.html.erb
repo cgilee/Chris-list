@@ -17,17 +17,19 @@
 
       <p><%= link_to "Create a Post", posts_new_path, class:"btn btn-aqua btn-block shadow" %></p>
 
-      <div class="pb-3 h5">
-        <span><%= @category.name %>, </span><span class="font-weight-bolder"><%= @subcategory.name %></span>
+      <div class="pb-3 h4 text-center">
+        <span class="font-weight-bolder text-muted"><%= @subcategory.name %></span>
       </div>
 
       <%= render "form" %>
     </div>
 
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-10">
-			<%= render "pagination" %>
+			<%# render "pagination" %>
+      <%== pagy_info(@pagy) %>
+      <small><%== pagy_bootstrap_nav(@pagy) %></small>
 
-			<div class="row pb-4">
+			<div class="row pb-3 pr-3">
 				<%= render "card_list", posts: @posts %>
 			</div>
     </div>

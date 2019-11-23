@@ -24,14 +24,16 @@ json["categories"].each_pair do |category_name, subcategories|
   end
 end
 
-100.times do |post|
+1000.times do |post|
+  county = County.all.sample
+  category = Category.all.sample
   Post.create({
-    county_id: County.all.sample.id,
-    city_id: City.all.sample.id,
-    category_id: Category.all.sample.id,
-    subcategory_id: Subcategory.all.sample.id,
+    county_id: county.id,
+    city_id: City.where(county_id: county.id).sample.id,
+    category_id: category.id,
+    subcategory_id: Subcategory.where(category_id: category.id).sample.id,
     title: Faker::Commerce.product_name,
-    price_cents: Faker::Number.between(from: 0, to: 5000),
+    price_cents: Faker::Number.between(from: 0, to: 1000),
     street_address: Faker::Address.street_address,
     city_or_province: Faker::Address.city,
     state: Faker::Address.state,
@@ -40,13 +42,11 @@ end
     phone: Faker::PhoneNumber.phone_number,
     email: Faker::Internet.email
   })
-  Post.all.each do |post|
-    number = Faker::Number.between(from: 1, to: 8);
-    number.times do
-      random = Faker::Number.between(from: 1, to: 500);
-      Post.create({
-      photos: post.photos.attach(io: File.open("db/photos/#{random}.png"), filename: "#{random}.png")
-      })
-    end
+end
+Post.all.each do |post|
+  number = Faker::Number.between(from: 1, to: 8);
+  number.times do
+  random = Faker::Number.between(from: 1, to: 500);
+  post.photos.attach(io: File.open("db/photos/#{random}.png"), filename: "#{random}.png")
   end
 end

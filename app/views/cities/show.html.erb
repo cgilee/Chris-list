@@ -16,7 +16,14 @@
       <%= render "brand" %>
       <p><%= link_to "Create a Post", posts_new_path, class:"btn btn-aqua btn-block shadow" %></p>
       <p><%= link_to "My Account", @city, class:"btn btn-light btn-block" %></p>
-      <p><input class="form-control mx-auto" type="search" placeholder="Search" aria-label="Search"></p>
+      <form>
+        <div class="input-group">
+          <input type="text submit" method="get" name="search" id="search" class="form-control" placeholder="Search.." value="<%= params[:search] %>">
+          <div class="input-group-append">
+            <button type="button submit" class="btn btn-outline-secondary">--</button>
+          </div>
+        </div>
+      </form>
     </div>
         
     <div class="col-12 col-lg-10 col-xl-8">

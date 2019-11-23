@@ -20,7 +20,7 @@
 
     <div class="text-right">
       <span class="navbar-text text-truncate text-muted">
-        posted <%= Faker::Number.digit%> min ago
+        posted on <%= @post.created_at.month %>/<%= @post.created_at.day %>
       </span>
     </div>
 

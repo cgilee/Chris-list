@@ -1,0 +1,32 @@
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <% @post.photos.each.with_index do |photo, index| %>
+      <li data-target="#carouselExampleIndicators" data-slide-to="<%= index %>" class="<%= :active if index==0 %>"></li>
+    <% end %>
+  </ol>
+  <div class="carousel-inner">
+    <% @post.photos.each.with_index do |photo, index| %>
+      <div class="carousel-item <%= :active if index==0 %>">
+        <%= image_tag photo, class:"d-block w-100", style:"max-width:150%" %> 
+      </div>
+    <% end %>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<div class="row-12 bg-light">
+<div class="btn-group p-0">
+  <% @post.photos.each.with_index do |photo, index| %>
+    <div type="button" class="btn p-0 border-0" style="max-width:15%"  data-carousel-target-id="<%= index %>">
+      <%= image_tag photo, class:"d-inline-block", style:"max-width:100%" %>
+    </div>
+  <% end %>
+</div>
+</div>

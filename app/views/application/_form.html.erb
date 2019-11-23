@@ -1,14 +1,31 @@
 <form>
-  <div class="row">
+  <div class="form-row">
     <div class="col-12 pb-1">
-      <input type="text" class="form-control" placeholder="First name">
+      <label for="title">Sift by title:</label>
+      <input type="text" method="get" name="title" id="title" class="form-control" placeholder="title" value="<%= params[:title] %>">
     </div>
     <div class="col-12 pb-1">
-      <input type="text" class="form-control" placeholder="Last name">
+      <label for="min">Sift by price:</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">at least $</span>
+          </div>
+          <input type="text" aria-label="min price" method="get" name="min" id="min" class="form-control" placeholder="min" value="<%= params[:min] %>">
+        </div>
+    </div>
+    <div class="col-12 pb-1">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">at most $</span>
+          </div>
+          <input type="text" aria-label="max price" method="get" name="max" id="max" class="form-control" placeholder="max" value="<%= params[:max] %>">
+        </div>
     </div>
   </div>
+
+  <button type="submit" class="btn btn- btn-sm">submit</button>
 </form>
-      
+
 <div class="pb-1">
     <div class="custom-control custom-switch">
       <input type="checkbox" class="custom-control-input" id="customSwitch1">
@@ -29,10 +46,3 @@
 </div>
 
 <input type="range" class="custom-range" id="customRange1">
-
-<div class="input-group pb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text">$</span>
-  </div>
-  <input type="text" class="form-control" placeholder="amount" aria-label="Amount (to the nearest dollar)">
-</div>

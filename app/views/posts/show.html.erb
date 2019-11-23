@@ -1,57 +1,65 @@
 <div class="container-fluid">
   <div class="row">
 
-    <div class="col-12 pb-2">
+    <div class="col-12 mx-auto pb-3">
+      <%= render "navbar" %>
+    </div>
+
+    <div class="col-9 mx-auto justify-content-center">
+
+			<nav aria-label="Page navigation example">
+				<ul class="pagination pagination-sm justify-content-center">
+					<li class="page-item">
+						<a class="page-link" href="#" aria-label="Previous">
+							<span aria-hidden="true">&ltrif; prev</span>
+						</a>
+					</li>
+					<li class="page-item"><a class="page-link" href="#">&utrif;</a></li>
+					<li class="page-item">
+						<a class="page-link" href="#" aria-label="Next">
+							<span aria-hidden="true">next &rtrif;</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+
+      <div class="pb-3">
+        <%= render "subnavbar" %>
+      </div>
+
     </div>
 
   </div>
 </div>
 
 
-<div class="container-fluid">
-  <div class="row">
+<div class="container">
+  <div class="row mx-auto">
 
-    <div class="col-xs-8 col-sm-8 col-md-6 col-lg-2 mx-auto">
-      <%= render "brand" %>
-
-      <p><%= link_to "Create a Post", posts_new_path, class:"btn btn-aqua btn-block shadow" %></p>
-
-      <div class="h5">
-      </div>
-
-      <%= render "form" %>
+    <div class="col-8">
+      <h1 class="display-5 text-center pb-2">
+        <%= @post.title %> - $<%= @post.price_cents %>
+      </h1>
     </div>
 
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-10">
-			<%= render "pagination" %>
+    <div class="col-8 pb-2">
+        <%= render "carousel" %>
+		</div>
 
-			<div class="row pb-4">
-        <% Post.all.each do |post| %>
-          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="card-deck pb-4">
-              <div class="card shadow">
-
-                <%= image_tag post.photos.first, class:"card-img-top img-thumbnail" if post.photos.attached? %>
-               
-                <div class="card-body">
-                  <h5 class="card-title text-truncate"><%= post.title %></h5>
-                  <p class="card-text font-weight-lighter text-truncate"><%= post.description %>
-                </div>
-
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">$<%= post.price_cents %></li>
-                </ul>
-
-                <div class="card-footer">
-                  <%= link_to "Visit Listing", "#" %>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        <% end %>
-			</div>
+    <div class="col-4">
+      <div class="py-4 mx-auto">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3166.6183823575643!2d-121.91743366635173!3d37.469731291055446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fc61c89f7dbf5%3A0xadd4d6fec767fe17!2s48482%20Arkansas%20Pl%2C%20Fremont%2C%20CA%2094539!5e0!3m2!1sen!2sus!4v1568853360922!5m2!1sen!2sus" width="350" height="350" frameborder="0" class="rounded border" style="border:0;" allowfullscreen=""></iframe>
+      </div>
     </div>
 
   </div>
+
+  <div class="row mx-auto">
+    <div class="col-11 mx-auto">
+      <p class="lead text-justify text-break"><%= @post.description %></p>
+  
+    <%= render "metalinks" %>
+    </div>
+  </div>
+
 </div>

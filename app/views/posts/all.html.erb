@@ -1,0 +1,57 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-12 pb-2">
+    </div>
+
+  </div>
+</div>
+
+
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-xs-8 col-sm-8 col-md-6 col-lg-2 mx-auto">
+      <%= render "brand" %>
+
+      <p><%= link_to "Create a Post", posts_new_path, class:"btn btn-aqua btn-block shadow" %></p>
+
+      <div class="h5">
+      </div>
+
+      <%= render "form" %>
+    </div>
+
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-10">
+			<%= render "pagination" %>
+
+			<div class="row pb-4">
+        <% Post.all.each do |post| %>
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card-deck pb-4">
+              <div class="card shadow">
+
+                <%= image_tag post.photos.first, class:"card-img-top img-thumbnail" if post.photos.attached? %>
+               
+                <div class="card-body">
+                  <h5 class="card-title text-truncate"><%= post.title %></h5>
+                  <p class="card-text font-weight-lighter text-truncate"><%= post.description %>
+                </div>
+
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">$<%= post.price_cents %></li>
+                </ul>
+
+                <div class="card-footer">
+                  <%= link_to "Visit Listing", "#{post.title.parameterize}" %>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        <% end %>
+			</div>
+    </div>
+
+  </div>
+</div>

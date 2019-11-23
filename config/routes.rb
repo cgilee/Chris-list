@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   root to: (redirect "/counties/san-francisco-bay-area")
 
+  get "/posts/:slug" => "posts#show"
+
   get "/posts/new" => "posts#new"
   get "/:county/:county_slug/posts/all" => "posts#show"
   get "/:city/:city_slug/posts/all" => "posts#show"
